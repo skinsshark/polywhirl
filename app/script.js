@@ -1,5 +1,5 @@
 let polygonConfig = {
-  sides: 3,
+  sides: 18,
   size: 100,
   x: 150,
   y: 150
@@ -7,27 +7,33 @@ let polygonConfig = {
 
 const stage = document.getElementById('stage');
 
+
+
 redraw(stage, polygonConfig);
 
 const incButton = document.getElementById('inc');
 
 incButton.addEventListener("click", () => {
   polygonConfig.sides++;
-  handleClick(stage, polygonConfig);
+  redraw(stage, polygonConfig);
 });
 
-function handleClick(stage, polygon) {
+function redraw(stage, polygon) {
+  if ( polygon.sides === 20 ) {
 
-  console.log('asdf ' + polygon.sides);
-  if ( polygon.sides > 20 ) {
-    polygon.sides = 3;
+  } else {
+    stage.className = "";
   }
 
-  redraw(stage, polygon);
+  if ( polygon.sides > 20 ) {
+    setTimeout(() => {
+      stage.className = "";
+    }, 1000);
+    polygon.sides = 3;
+    stage.className += "retroPhoneAnimation";
+  }
 
-}
 
-function redraw(stage, polygon) {
   const cx = stage.getContext('2d');
 
   //clear canvas for redraw
@@ -39,7 +45,10 @@ function redraw(stage, polygon) {
   cx.moveTo(polygon.x +  polygon.size, polygon.y); //starting point
 
   for ( var i = 1; i < polygon.sides; i++ ) {
-      cx.lineTo(polygon.x + polygon.size * Math.cos(i * 2 * Math.PI / polygon.sides), polygon.y + polygon.size * Math.sin(i * 2 * Math.PI / polygon.sides));
+      cx.lineTo(
+        polygon.x + polygon.size * Math.cos(i * 2 * Math.PI / polygon.sides),
+        polygon.y + polygon.size * Math.sin(i * 2 * Math.PI / polygon.sides)
+      );
   }
 
   //fix to make edges meet

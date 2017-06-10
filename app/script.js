@@ -1,5 +1,5 @@
 let polygonConfig = {
-  sides: 4,
+  sides: 3,
   size: 100,
   x: 150,
   y: 150

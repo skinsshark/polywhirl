@@ -1,0 +1,64 @@
+body {
+  background-color: #C1C9F4;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 5px;
+  font-size: 65px;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+  top: 80vh;
+  left: 30vw;
+  position: fixed;
+}
+
+@media only screen and (max-width: 992px) {
+  h1 {
+    left: 28vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    transform: rotate(0);
+    top: 0;
+    left: 0;
+    font-size: 40px;
+  }
+}
+
+#inc {
+  font-size: 4em;
+  cursor: pointer;
+  display: inline;
+}
+
+.container {
+  width: 50vw;
+  text-align: center;
+  margin: 18vh auto 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+canvas {
+  display: flex;
+  margin: 0 auto 10vh;
+  animation: 2s spin linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

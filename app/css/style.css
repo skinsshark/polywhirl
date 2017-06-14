@@ -23,6 +23,13 @@ h1 {
   position: fixed;
 }
 
+@media only screen and (min-width: 1550px) {
+  h1 {
+    top: 65vh;
+    left: 35vw;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   h1 {
     left: 28vw;
@@ -44,10 +51,30 @@ h1 {
   display: inline;
 }
 
+#inc:active {
+  top: 10px;
+}
+
+p#score {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 7vw;
+  position: absolute;
+  letter-spacing: 2px;
+  top: 2vw;
+  right: 5vw;
+  font-weight: bold;
+}
+
 .container {
   width: 50vw;
   text-align: center;
   margin: 18vh auto 0;
+}
+
+@media only screen and (min-width: 1550px) {
+  .container {
+    margin-top: 30vh;
+  }
 }
 
 @media only screen and (max-width: 992px) {

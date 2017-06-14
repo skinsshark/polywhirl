@@ -6,32 +6,31 @@ let polygonConfig = {
 }
 
 const stage = document.getElementById('stage');
-
-
+const score = document.getElementById('score');
 
 redraw(stage, polygonConfig);
-
 const incButton = document.getElementById('inc');
 
 incButton.addEventListener("click", () => {
   polygonConfig.sides++;
+  score.innerHTML = polygonConfig.sides;
   redraw(stage, polygonConfig);
 });
 
 function redraw(stage, polygon) {
-  if ( polygon.sides === 20 ) {
-
-  } else {
-    stage.className = "";
-  }
-
-  if ( polygon.sides > 20 ) {
-    setTimeout(() => {
-      stage.className = "";
-    }, 1000);
-    polygon.sides = 3;
-    stage.className += "retroPhoneAnimation";
-  }
+  // if ( polygon.sides === 20 ) {
+  //
+  // } else {
+  //   stage.className = "";
+  // }
+  //
+  // if ( polygon.sides > 20 ) {
+  //   setTimeout(() => {
+  //     stage.className = "asdf";
+  //   }, 1000);
+  //   polygon.sides = 3;
+  //   stage.className += "retroPhoneAnimation";
+  // }
 
 
   const cx = stage.getContext('2d');
@@ -50,11 +49,11 @@ function redraw(stage, polygon) {
         polygon.y + polygon.size * Math.sin(i * 2 * Math.PI / polygon.sides)
       );
   }
+  cx.strokeStyle = "#fff";
 
   //fix to make edges meet
   cx.lineTo(polygon.x +  polygon.size, polygon.y + 2);
 
-  cx.strokeStyle = "#fff";
   cx.lineWidth = 5;
   cx.stroke();
 }

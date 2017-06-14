@@ -10,11 +10,23 @@ const score = document.getElementById('score');
 
 redraw(stage, polygonConfig);
 const incButton = document.getElementById('inc');
+const resetButton = document.getElementById('reset');
 
 incButton.addEventListener("click", () => {
   polygonConfig.sides++;
   score.innerHTML = polygonConfig.sides;
   redraw(stage, polygonConfig);
+});
+
+resetButton.addEventListener("click", () => {
+  polygonConfig.sides = 3;
+  score.innerHTML = polygonConfig.sides;
+  redraw(stage, polygonConfig);
+
+  setTimeout(() => {
+    stage.className = "tmp";
+  }, 1000);
+  stage.className += "retroPhoneAnimation";
 });
 
 function redraw(stage, polygon) {
@@ -25,11 +37,11 @@ function redraw(stage, polygon) {
   // }
   //
   // if ( polygon.sides > 20 ) {
-  //   setTimeout(() => {
-  //     stage.className = "asdf";
-  //   }, 1000);
-  //   polygon.sides = 3;
-  //   stage.className += "retroPhoneAnimation";
+    // setTimeout(() => {
+    //   stage.className = "asdf";
+    // }, 1000);
+    // polygon.sides = 3;
+    // stage.className += "retroPhoneAnimation";
   // }
 
 

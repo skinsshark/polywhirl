@@ -45,14 +45,12 @@ h1 {
   }
 }
 
-#inc {
+.actionButton {
   font-size: 4em;
+  display: inline-block;
+  animation: 1s linear all;
   cursor: pointer;
-  display: inline;
-}
-
-#inc:active {
-  top: 10px;
+  margin: 0 10px;
 }
 
 p#score {

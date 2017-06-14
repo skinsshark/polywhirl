@@ -14,7 +14,8 @@ class Polygon extends React.Component {
           width="300px"
           height="300px"
         ></canvas>
-        <p id="inc" onClick={this.handleClick()}>🆙</p>
+        <p className="actionButton" id="inc" onClick={this.handleClick()}>🆙</p>
+        <p className="actionButton" id="reset">⏮</p>
         <p id="score"></p>
       </div>
     );

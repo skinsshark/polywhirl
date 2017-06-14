@@ -42839,8 +42839,13 @@
 	        }),
 	        _react2.default.createElement(
 	          'p',
-	          { id: 'inc', onClick: this.handleClick() },
+	          { className: 'actionButton', id: 'inc', onClick: this.handleClick() },
 	          '\uD83C\uDD99'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'actionButton', id: 'reset' },
+	          '\u23EE'
 	        ),
 	        _react2.default.createElement('p', { id: 'score' })
 	      );

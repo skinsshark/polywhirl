@@ -24,27 +24,12 @@ resetButton.addEventListener("click", () => {
   redraw(stage, polygonConfig);
 
   setTimeout(() => {
-    stage.className = "tmp";
+    stage.classList.remove("retroPhoneAnimation");
   }, 1000);
-  stage.className += "retroPhoneAnimation";
+  stage.classList.add("retroPhoneAnimation");
 });
 
 function redraw(stage, polygon) {
-  // if ( polygon.sides === 20 ) {
-  //
-  // } else {
-  //   stage.className = "";
-  // }
-  //
-  // if ( polygon.sides > 20 ) {
-    // setTimeout(() => {
-    //   stage.className = "asdf";
-    // }, 1000);
-    // polygon.sides = 3;
-    // stage.className += "retroPhoneAnimation";
-  // }
-
-
   const cx = stage.getContext('2d');
 
   //clear canvas for redraw
